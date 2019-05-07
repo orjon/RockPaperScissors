@@ -1,5 +1,5 @@
 window.addEventListener('DOMContentLoaded', () => {
-  console.log('Hello there...')
+  console.log('RockPaperScissors v2.0 2019-05-07')
 
   const gameStart = document.querySelector('.gameStart')
   const gameEnd = document.querySelector('.gameEnd')
@@ -28,7 +28,6 @@ window.addEventListener('DOMContentLoaded', () => {
   let numberHands = 3
 
   let justLoaded = true
-  // console.log('Just loaded: '+ justLoaded)
 
   const gameHands = ['rock','paper','scissors','lizard','spock']
   const gameTruthTable = [
@@ -38,7 +37,6 @@ window.addEventListener('DOMContentLoaded', () => {
     [ 1,-1, 1, 0, 1],
     [-1, 1,-1, 1, 0]
   ]
-  // console.log('Game truth table: '+ gameTruthTable)
 
   let handPlayedCPU = undefined
   let handPlayedPlayer = undefined
@@ -49,7 +47,6 @@ window.addEventListener('DOMContentLoaded', () => {
     soundHover.currentTime = 0
     soundHover.play()
     justLoaded = true
-    console.log('START touch')
     screenStart.classList.add('hide')
     screenSelectHand.classList.remove('hide')
     advancedHands.forEach(name => {
@@ -63,7 +60,6 @@ window.addEventListener('DOMContentLoaded', () => {
     soundHover.play()
     justLoaded = true
     numberHands = 5
-    console.log('START touch')
     screenStart.classList.add('hide')
     screenSelectHand.classList.remove('hide')
   })
