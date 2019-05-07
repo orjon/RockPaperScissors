@@ -9,8 +9,8 @@ window.addEventListener('DOMContentLoaded', () => {
   const resultLose = document.querySelector('.result .lose')
 
   const screenStart = document.querySelector('.screenStart')
-  const playNormal = document.querySelector('.screenStart .normal')
-  const playAdvanced = document.querySelector('.screenStart .advanced')
+  const playNormal = document.querySelector('.screenStart .gameNormal')
+  const playAdvanced = document.querySelector('.screenStart .gameAdvanced')
 
   const selectedHand = document.querySelectorAll('.screenSelectHand img')
 

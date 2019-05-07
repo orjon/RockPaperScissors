@@ -11,30 +11,29 @@ $handCPUScale: 85%;
 
 $transSelectHand: 0.05s;
 $transHoverHand: 0.05s;
+$transGameSelect: 0.05s;
 
 $fontBody: 14px;
 
-$fontStart: 10vw;
-$fontStartEmphasis: 9vw;
+$fontStart: 7vw;
+$fontStartEmphasis: 7.25vw;
 
 * {
-  margin:0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
   user-select: none; //make text unhighlightable
   // overflow:hidden;
 }
 
 body {
-  margin: 0;
-  padding: 0;
+
   background-color: $body-background-color;
   font-family: Helvetica, Arial, sans-serif;
   font-size: $fontBody;
   display: flex;
   flex-direction: row;
   height: 100vh;
-  // border: 1px red solid;
 }
 
 
@@ -64,34 +63,52 @@ main {
 
 
   .gameStart {
-    // border: 1px black solid;
     height: 100%;
-    width: 95vw;
+    width: 100vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
     .screenStart {
-      // border: 1px solid purple;
+      height: 60%;
+      width: 90%;
       margin: 0 auto;
-      font-size: $fontStart;
 
-      p {
-        text-align: center;
-        line-height: 200%;
+      .gameSelect {
+        height:50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        p {
+          margin: 0;
+          padding: 0;
+          font-size: $fontStart;
+          text-align: center;
+          transition: font-size $transGameSelect;
+          transition-timing-function: ease-out;
+
+        }
+        p:hover {
+          font-size: $fontStartEmphasis;
+          transition: font-size $transGameSelect;
+          transition-timing-function: ease-out;
+        }
       }
-      .hover {
-        font-size: $fontStartEmphasis;
-      }
+
+
     }
     img {
+      margin: 0;
+      padding: 0;
       cursor: pointer
     }
   }
 
   .gameEnd {
-    // border: 1px pink solid;
+    border: 1px pink solid;
     height: 100vh;
     width: 100vw;
     display: flex;
@@ -102,7 +119,7 @@ main {
 
 
   .halfCPU {
-    // border: 1px solid green;
+    border: 1px solid green;
     height: 100%;
     width: 100vw;
     // display: flex;
@@ -137,7 +154,7 @@ main {
 
 
   nav {
-    // border: 1px solid green;
+    border: 1px solid green;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -149,7 +166,7 @@ main {
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      // border: 1px solid red;
+      border: 1px solid yellow;
       .over {
         max-width:95%;
         max-height:95%;
@@ -177,7 +194,7 @@ main {
       transition: max-height $transSelectHand;
       transition-timing-function: ease-out;
       border-radius: 35%;
-      // border: 1px solid red;
+      border: 1px solid red;
     }
     .selector.advanced {
 

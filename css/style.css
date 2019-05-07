@@ -1,12 +1,10 @@
 * {
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
   user-select: none; }
 
 body {
-  margin: 0;
-  padding: 0;
   background-color: #FFF;
   font-family: Helvetica, Arial, sans-serif;
   font-size: 14px;
@@ -25,30 +23,47 @@ main {
     z-index: 10;
     width: 100vw;
     height: 100vh;
+    opacity: .6;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center; }
-    main .result .win, main .result .draw, main .result .lose {
-      display: none; }
+    main .result .win .draw .lose {
+      position: relative; }
   main .gameStart {
     height: 100%;
-    width: 95vw;
+    width: 100vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center; }
     main .gameStart .screenStart {
-      margin: 0 auto;
-      font-size: 10vw; }
-      main .gameStart .screenStart p {
-        text-align: center;
-        line-height: 200%; }
-      main .gameStart .screenStart .hover {
-        font-size: 9vw; }
+      height: 60%;
+      width: 90%;
+      margin: 0 auto; }
+      main .gameStart .screenStart .gameSelect {
+        height: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; }
+        main .gameStart .screenStart .gameSelect p {
+          margin: 0;
+          padding: 0;
+          font-size: 7vw;
+          text-align: center;
+          transition: font-size 0.05s;
+          transition-timing-function: ease-out; }
+        main .gameStart .screenStart .gameSelect p:hover {
+          font-size: 7.25vw;
+          transition: font-size 0.05s;
+          transition-timing-function: ease-out; }
     main .gameStart img {
+      margin: 0;
+      padding: 0;
       cursor: pointer; }
   main .gameEnd {
+    border: 1px pink solid;
     height: 100vh;
     width: 100vw;
     display: flex;
@@ -56,6 +71,7 @@ main {
     align-items: center;
     justify-content: space-around; }
   main .halfCPU {
+    border: 1px solid green;
     height: 100%;
     width: 100vw; }
     main .halfCPU img {
@@ -75,6 +91,7 @@ main {
       max-width: 100%;
       max-height: 100%; }
   main nav {
+    border: 1px solid green;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -85,7 +102,8 @@ main {
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center; }
+      justify-content: center;
+      border: 1px solid yellow; }
       main nav .selector .over {
         max-width: 95%;
         max-height: 95%;
@@ -109,10 +127,9 @@ main {
       /* For Safari 3.1 to 6.0 */
       transition: max-height 0.05s;
       transition-timing-function: ease-out;
-      border-radius: 35%; }
+      border-radius: 35%;
+      border: 1px solid red; }
   main .hide {
     display: none; }
-  main .turnOn {
-    display: block; }
 
 /*# sourceMappingURL=style.css.map */
