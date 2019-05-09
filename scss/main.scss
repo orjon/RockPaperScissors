@@ -1,6 +1,6 @@
 $body-background-color: #FFF;
-$unselectedHand: 0.5;
-$selectedHand: 1;
+$unselectedColor: 0.5;
+$selectedColor: 1;
 
 
 $handPlayerOpacity: 0.9;
@@ -9,14 +9,13 @@ $handPlayerScale: 100%;
 $handCPUOpacity: 0.5;
 $handCPUScale: 85%;
 
-$transSelectHand: 0.01s;
+$transSelect: 0.1s;
 $transHoverHand: 0.05s;
-$transGameSelect: 0.05s;
 
 $fontBody: 14px;
 
-$fontStart: 7.25vw;
-$fontStartEmphasis: 7vw;
+$fontStart: 7vw;
+$fontStartEmphasis: 7.2vw;
 
 * {
   margin: 0;
@@ -43,7 +42,6 @@ main {
   align-items: center;
   width: 100vw;
 
-
   .gameStart {
     height: 100%;
     width: 100vw;
@@ -66,14 +64,16 @@ main {
           padding: 0;
           font-size: $fontStart;
           text-align: center;
-          transition: font-size $transGameSelect;
+          transition: font-size $transSelect;
           transition-timing-function: ease-out;
+          opacity: $unselectedColor;
         }
 
         p:hover {
           font-size: $fontStartEmphasis;
-          transition: font-size $transGameSelect;
+          transition: font-size $transSelect;
           transition-timing-function: ease-out;
+          opacity: $selectedColor;
         }
       }
     }
@@ -85,7 +85,7 @@ main {
     align-items: center;
     justify-content: space-around;
     height: 60vh;
-    width: 100vw;
+    width: 98vw;
     .selector {
       height: 100%;
       max-width: 20%;
@@ -93,38 +93,30 @@ main {
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      opacity: $unselectedHand;
-      transition-timing-function: ease-out;
-      -webkit-transition: max-width $transSelectHand; /* For Safari 3.1 to 6.0 */
-      transition: max-width $transSelectHand;
 
-      .over {
-        max-width:90%;
-        max-height:90%;
-
+      img {
+        border-radius: 35%;
+        max-width:85%;
+        max-height: 85%;
+        opacity: $unselectedColor;
         transition-timing-function: ease-out;
-        -webkit-transition: max-width $transSelectHand; /* For Safari 3.1 to 6.0 */
-        transition: max-width $transSelectHand;
+        -webkit-transition: max-width $transSelect; /* For Safari 3.1 to 6.0 */
+        transition: max-width $transSelect;
+
+        &.over {
+          max-width:90%;
+          max-height:90%;
+          transition-timing-function: ease-out;
+          -webkit-transition: max-width $transSelect; /* For Safari 3.1 to 6.0 */
+          transition: max-width $transSelect;
+          opacity: $selectedColor;
+        }
+        &.mousedown {
+          max-width:100%;
+          max-height: 100%;
+          opacity: $selectedColor;
+        }
       }
-      .mousedown {
-        max-width:100%;
-        max-height: 100%;
-        opacity: $selectedHand;
-      }
-    }
-
-    .selector img {
-      border-radius: 35%;
-      max-width:85%;
-      max-height: 85%;
-    }
-
-    .selector:hover {
-        opacity: $selectedHand;
-    }
-
-    .selector.advanced {
-
     }
   }
 
@@ -145,7 +137,6 @@ main {
     .win .draw .lose{
     position: relative;
     }
-
   }
 }
 

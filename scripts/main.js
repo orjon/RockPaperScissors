@@ -1,5 +1,7 @@
 window.addEventListener('DOMContentLoaded', () => {
-  console.log('RockPaperScissors v2.0 2019-05-07')
+  console.log('www.orjon.com')
+  console.log('Rock-Paper-Scissors v2.1 2019-05-09')
+  console.log('http://www.orjon.com/rockpaperscissors')
 
   const gameStart = document.querySelector('.gameStart')
   const gameEnd = document.querySelector('.gameEnd')
