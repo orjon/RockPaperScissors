@@ -9,7 +9,7 @@ $handPlayerScale: 100%;
 $handCPUOpacity: 0.5;
 $handCPUScale: 85%;
 
-$transSelect: 0.1s;
+$transSelect: 0.0s;
 $transHoverHand: 0.05s;
 
 $fontBody: 14px;
@@ -32,6 +32,7 @@ body {
   display: flex;
   flex-direction: row;
   height: 100vh;
+  overflow:hidden;
 }
 
 
@@ -41,6 +42,7 @@ main {
   justify-content: center;
   align-items: center;
   width: 100vw;
+
 
   .gameStart {
     height: 100%;
@@ -164,13 +166,17 @@ main {
 .halfPlayer {
   height: 100%;
   width: 100vw;
-  padding: 0;
   display: flex;
   flex-direction: column-reverse;
-  align-items: flex-start;
-  img {
-    opacity: $handPlayerOpacity;
-    max-width: $handPlayerScale;
-    max-height: $handPlayerScale;
+  div {
+      display: flex;
+      flex-direction: column-reverse;
+
+      img {
+        opacity: $handPlayerOpacity;
+        max-width: $handPlayerScale;
+        max-height: $handPlayerScale;
+      }
   }
+
 }
