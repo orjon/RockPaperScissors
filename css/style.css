@@ -3,7 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   user-select: none;
-  overflow: hidden; }
+}
 
 body {
   background-color: #FFF;
@@ -11,93 +11,108 @@ body {
   font-size: 14px;
   display: flex;
   flex-direction: row;
-  height: 100vh; }
+  height: 100vh;
+}
 
 main {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100vw; }
-  main .gameStart {
-    height: 100%;
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; }
-    main .gameStart .screenStart {
-      height: 60%;
-      width: 90%;
-      margin: 0 auto; }
-      main .gameStart .screenStart .gameSelect {
-        height: 50%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center; }
-        main .gameStart .screenStart .gameSelect p {
-          margin: 0;
-          padding: 0;
-          font-size: 7vw;
-          text-align: center;
-          transition: font-size 0.1s;
-          transition-timing-function: ease-out;
-          opacity: 0.5; }
-        main .gameStart .screenStart .gameSelect p:hover {
-          font-size: 7.2vw;
-          transition: font-size 0.1s;
-          transition-timing-function: ease-out;
-          opacity: 1; }
-  main nav {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    height: 60vh;
-    width: 98vw; }
-    main nav .selector {
-      height: 100%;
-      max-width: 20%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center; }
-      main nav .selector img {
-        border-radius: 35%;
-        max-width: 85%;
-        max-height: 85%;
-        opacity: 0.5;
-        transition-timing-function: ease-out;
-        -webkit-transition: max-width 0.1s;
-        /* For Safari 3.1 to 6.0 */
-        transition: max-width 0.1s; }
-        main nav .selector img.over {
-          max-width: 90%;
-          max-height: 90%;
-          transition-timing-function: ease-out;
-          -webkit-transition: max-width 0.1s;
-          /* For Safari 3.1 to 6.0 */
-          transition: max-width 0.1s;
-          opacity: 1; }
-        main nav .selector img.mousedown {
-          max-width: 100%;
-          max-height: 100%;
-          opacity: 1; }
-  main .hide {
-    display: none; }
-  main .result {
-    position: absolute;
-    z-index: 10;
-    width: 100vw;
-    height: 110vh;
-    opacity: .6;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; }
-    main .result .win .draw .lose {
-      position: relative; }
+  width: 100vw;
+}
+main .gameStart {
+  height: 100%;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+main .gameStart .screenStart {
+  height: 60%;
+  width: 90%;
+  margin: 0 auto;
+}
+main .gameStart .screenStart .gameSelect {
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+main .gameStart .screenStart .gameSelect p {
+  margin: 0;
+  padding: 0;
+  font-size: 7vw;
+  text-align: center;
+  transition: font-size 0.1s;
+  transition-timing-function: ease-out;
+  opacity: 0.5;
+}
+main .gameStart .screenStart .gameSelect p:hover {
+  font-size: 7.2vw;
+  transition: font-size 0.1s;
+  transition-timing-function: ease-out;
+  opacity: 1;
+}
+main nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  height: 60vh;
+  width: 98vw;
+}
+main nav .selector {
+  height: 100%;
+  max-width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+main nav .selector img {
+  border-radius: 35%;
+  max-width: 85%;
+  max-height: 85%;
+  opacity: 0.5;
+  transition-timing-function: ease-out;
+  -webkit-transition: max-width 0.1s;
+  /* For Safari 3.1 to 6.0 */
+  transition: max-width 0.1s;
+}
+main nav .selector img.over {
+  max-width: 90%;
+  max-height: 90%;
+  transition-timing-function: ease-out;
+  -webkit-transition: max-width 0.1s;
+  /* For Safari 3.1 to 6.0 */
+  transition: max-width 0.1s;
+  opacity: 1;
+}
+main nav .selector img.mousedown {
+  max-width: 100%;
+  max-height: 100%;
+  opacity: 1;
+}
+main .hide {
+  display: none;
+}
+main .result {
+  position: absolute;
+  z-index: 10;
+  width: 100vw;
+  height: 110vh;
+  opacity: 0.6;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+main .result .win .draw .lose {
+  position: relative;
+}
 
 .gameEnd {
   height: 100vh;
@@ -105,16 +120,19 @@ main {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-around; }
+  justify-content: space-around;
+}
 
 .halfCPU {
   height: 100%;
-  width: 100vw; }
-  .halfCPU img {
-    opacity: 0.5;
-    max-width: 85%;
-    max-height: 85%;
-    transform: rotate(180deg); }
+  width: 100vw;
+}
+.halfCPU img {
+  opacity: 0.5;
+  max-width: 85%;
+  max-height: 85%;
+  transform: rotate(180deg);
+}
 
 .halfPlayer {
   height: 100%;
@@ -122,10 +140,12 @@ main {
   padding: 0;
   display: flex;
   flex-direction: column-reverse;
-  align-items: flex-start; }
-  .halfPlayer img {
-    opacity: 0.9;
-    max-width: 100%;
-    max-height: 100%; }
+  align-items: flex-start;
+}
+.halfPlayer img {
+  opacity: 0.9;
+  max-width: 100%;
+  max-height: 100%;
+}
 
 /*# sourceMappingURL=style.css.map */
