@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang='en' dir='ltr'>
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-41064961-6"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-41064961-6');
+  </script>
+  <meta charset='utf-8'>
+  <link rel='shortcut icon' type='image/x-icon' href='./images/favicon.ico' />
+  <link rel='stylesheet' href="styles/style.css">
+  <script type='text/javascript' src='scripts/main.js'></script>
+  <title>Rock Paper Scissor</title>
+</head>
+<body>
+  <audio preload='auto' class='soundHover' src='sounds/pop_low.wav'></audio>
+  <audio preload='auto' class='soundSelect' src='sounds/pop_high.wav'></audio>
+  <main>
+
+    <div class='gameStart'>
+      <div class='selectHand'>
+        <div class='selector'><img class='rock' src='images/hand_select_rock.png'></div>
+        <div class='selector'><img class='paper' src='images/hand_select_paper.png'></div>
+        <div class='selector'><img class='scissors'src='images/hand_select_scissors.png'></div>
+        <div class='selector advanced hide'><img class='lizard' src='images/hand_select_lizard.png'></div>
+        <div class='selector advanced hide'><img class='spock' src='images/hand_select_spock.png'></div>
+      </div>
+      <div class='gameSelect'>
+        <p class='changeGame'>change game:</p>
+        <p class='gameMode gameNormal select hide'>rock paper scissors</p>
+        <p class='gameMode gameAdvanced select'>rock paper scissors lizard spock</p>
+      </div>
+    </div>
+
+    <div class='gameEnd hide'>
+      <div class='result'>
+        <div><img class='win hide' src='images/result_win.png'></div>
+        <div><img class='draw hide' src='images/result_draw.png'></div>
+        <div><img class='lose hide' src='images/result_lose.png'></div>
+      </div>
+
+      <div class='halfCPU'>
+        <div class='rock'><img class='hide' src='images/hand_played_rock.png'></div>
+        <div class='paper'><img class='hide' src='images/hand_played_paper.png'></div>
+        <div class='scissors'><img class='hide' src='images/hand_played_scissors.png'></div>
+        <div class='lizard'><img class='hide' src='images/hand_played_lizard.png'></div>
+        <div class='spock'><img class='hide' src='images/hand_played_spock.png'></div>
+      </div>
+
+      <div class='halfPlayer'>
+        <div class='rock'><img class='hide' src='images/hand_played_rock.png'></div>
+        <div class='paper'><img class='hide' src='images/hand_played_paper.png'></div>
+        <div class='scissors'><img class='hide' src='images/hand_played_scissors.png'></div>
+        <div class='lizard'><img class='hide' src='images/hand_played_lizard.png'></div>
+        <div class='spock'><img class='hide' src='images/hand_played_spock.png'></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</main>
+
+
+</body>
+</html>

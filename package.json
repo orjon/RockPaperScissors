@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Rock Paper Scissors game",
   "scripts": {
-    "build": "sass styles/main.scss styles/style.css",
+    "build": "sass styles/main.scss styles/style.css && rm -rf dist && mkdir -p dist/styles dist/scripts && cp index.html dist/ && cp scripts/main.js dist/scripts/ && cp styles/style.css dist/styles/ && (cp styles/style.css.map dist/styles/ 2>/dev/null || true) && cp -r images dist/ && cp -r sounds dist/",
     "watch": "sass --watch styles/main.scss:styles/style.css"
   },
   "devDependencies": {

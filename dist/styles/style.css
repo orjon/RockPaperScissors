@@ -6,7 +6,7 @@
 }
 
 body {
-  background-color: #FFF;
+  background-color: #fff;
   font-family: Helvetica, Arial, sans-serif;
   font-size: 14px;
   display: flex;
@@ -30,34 +30,35 @@ main .gameStart {
   justify-content: center;
   align-items: center;
 }
-main .gameStart .screenStart {
-  height: 60%;
-  width: 90%;
-  margin: 0 auto;
+main .gameStart .select {
+  cursor: pointer;
 }
-main .gameStart .screenStart .gameSelect {
-  height: 50%;
+main .gameStart .gameSelect {
+  position: fixed;
+  bottom: 1%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-main .gameStart .screenStart .gameSelect p {
+main .gameStart .gameSelect .changeGame {
+  opacity: 0.6;
+}
+main .gameStart .gameSelect .gameMode {
   margin: 0;
   padding: 0;
-  font-size: 7vw;
+  font-size: min(7vw, 16px);
   text-align: center;
   transition: font-size 0s;
   transition-timing-function: ease-out;
   opacity: 0.5;
 }
-main .gameStart .screenStart .gameSelect p:hover {
-  font-size: 7.2vw;
-  transition: font-size 0s;
+main .gameStart .gameSelect .gameMode:hover {
+  transition: 0s;
   transition-timing-function: ease-out;
   opacity: 1;
 }
-main nav {
+main .selectHand {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -65,7 +66,7 @@ main nav {
   height: 60vh;
   width: 98vw;
 }
-main nav .selector {
+main .selectHand .selector {
   height: 100%;
   max-width: 20%;
   display: flex;
@@ -73,7 +74,11 @@ main nav .selector {
   align-items: center;
   justify-content: center;
 }
-main nav .selector img {
+main .selectHand .selector.hide {
+  display: none !important;
+}
+main .selectHand .selector img {
+  cursor: pointer;
   border-radius: 35%;
   max-width: 85%;
   max-height: 85%;
@@ -82,7 +87,7 @@ main nav .selector img {
   -webkit-transition: max-width 0s; /* For Safari 3.1 to 6.0 */
   transition: max-width 0s;
 }
-main nav .selector img.over {
+main .selectHand .selector img.over {
   max-width: 90%;
   max-height: 90%;
   transition-timing-function: ease-out;
@@ -90,7 +95,7 @@ main nav .selector img.over {
   transition: max-width 0s;
   opacity: 1;
 }
-main nav .selector img.mousedown {
+main .selectHand .selector img.mousedown {
   max-width: 100%;
   max-height: 100%;
   opacity: 1;
