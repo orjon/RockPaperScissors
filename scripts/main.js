@@ -1,8 +1,4 @@
 window.addEventListener('DOMContentLoaded', () => {
-  console.log('www.orjon.com')
-  console.log('Rock-Paper-Scissors v2.1 2019-05-09')
-  console.log('http://www.orjon.com/rockpaperscissors')
-
   const gameStart = document.querySelector('.gameStart')
   const gameEnd = document.querySelector('.gameEnd')
 
@@ -10,64 +6,72 @@ window.addEventListener('DOMContentLoaded', () => {
   const resultDraw = document.querySelector('.result .draw')
   const resultLose = document.querySelector('.result .lose')
 
-  const screenStart = document.querySelector('.screenStart')
-  const playNormal = document.querySelector('.screenStart .gameNormal')
-  const playAdvanced = document.querySelector('.screenStart .gameAdvanced')
+  const playNormal = document.querySelector('.gameNormal')
+  const playAdvanced = document.querySelector('.gameAdvanced')
 
-  const selectedHand = document.querySelectorAll('.screenSelectHand img')
+  const selectedHand = document.querySelectorAll('.selectHand img')
 
-  const advancedHands =document.querySelectorAll('.screenSelectHand .advanced img')
+  const advancedHands = document.querySelectorAll('.selectHand .advanced')
 
-  const screenSelectHand = document.querySelector('.screenSelectHand')
+  const selectHand = document.querySelector('.selectHand')
   const handCPU = document.querySelectorAll('.halfCPU img')
   const handPlayer = document.querySelectorAll('.halfPlayer img')
-
-
 
   const soundHover = document.querySelector('.soundHover')
   const soundSelect = document.querySelector('.soundSelect')
 
+  const result = document.querySelector('.result')
+
   let numberHands = 3
+
+  let gameMode = 'normal'
 
   let justLoaded = true
 
-  const gameHands = ['rock','paper','scissors','lizard','spock']
+  const gameHands = ['rock', 'paper', 'scissors', 'lizard', 'spock']
   const gameTruthTable = [
-    [ 0, 1,-1,-1, 1],
-    [-1, 0, 1, 1,-1],
-    [ 1,-1, 0,-1, 1],
-    [ 1,-1, 1, 0, 1],
-    [-1, 1,-1, 1, 0]
+    [0, 1, -1, -1, 1],
+    [-1, 0, 1, 1, -1],
+    [1, -1, 0, -1, 1],
+    [1, -1, 1, 0, -1],
+    [-1, 1, -1, 1, 0]
   ]
 
   let handPlayedCPU = undefined
   let handPlayedPlayer = undefined
 
-
   playNormal.addEventListener('mousedown', () => {
+    console.log('playNormal')
     soundHover.playbackRate = 1
     soundHover.currentTime = 0
     soundHover.play()
+    gameMode = 'normal'
     justLoaded = true
-    screenStart.classList.add('hide')
-    screenSelectHand.classList.remove('hide')
-    advancedHands.forEach(name => {
+    playNormal.classList.add('hide')
+    playAdvanced.classList.remove('hide')
+    selectHand.classList.remove('hide')
+    advancedHands.forEach((name) => {
       name.classList.add('hide')
     })
   })
 
   playAdvanced.addEventListener('mousedown', () => {
+    console.log('playAdvanced')
     soundHover.playbackRate = 1
     soundHover.currentTime = 0
     soundHover.play()
+    gameMode = 'advanced'
     justLoaded = true
     numberHands = 5
-    screenStart.classList.add('hide')
-    screenSelectHand.classList.remove('hide')
+    playNormal.classList.remove('hide')
+    playAdvanced.classList.add('hide')
+    selectHand.classList.remove('hide')
+    advancedHands.forEach((name) => {
+      name.classList.remove('hide')
+    })
   })
 
-
-  selectedHand.forEach(name => {
+  selectedHand.forEach((name) => {
     name.addEventListener('mouseover', () => {
       name.classList.add('over')
       if (!justLoaded) {
@@ -91,19 +95,14 @@ window.addEventListener('DOMContentLoaded', () => {
       soundSelect.currentTime = 0
       soundSelect.playbackRate = 1
       soundSelect.play()
-      handPlayedCPU = (Math.floor(Math.random() * numberHands))
+      handPlayedCPU = Math.floor(Math.random() * numberHands)
       showResults()
     })
-
   })
-
 
   function showResults() {
     handCPU[handPlayedCPU].classList.remove('hide')
     handPlayer[handPlayedPlayer].classList.remove('hide')
-    console.log('Player hand: '+ gameHands[handPlayedPlayer])
-    console.log('CPU hand: '+ gameHands[handPlayedCPU])
-    console.log('CPU hand: '+ handPlayedCPU)
     if (gameTruthTable[handPlayedCPU][handPlayedPlayer] > 0) {
       resultWin.classList.remove('hide')
     } else if (gameTruthTable[handPlayedCPU][handPlayedPlayer] === 0) {
@@ -112,4 +111,32 @@ window.addEventListener('DOMContentLoaded', () => {
       resultLose.classList.remove('hide')
     }
   }
+
+  result.addEventListener('mousedown', () => {
+    handPlayedCPU = undefined
+    handPlayedPlayer = undefined
+    numberHands = gameMode === 'normal' ? 3 : 5
+
+    resultWin.classList.add('hide')
+    resultDraw.classList.add('hide')
+    resultLose.classList.add('hide')
+
+    handCPU.forEach((hand) => hand.classList.add('hide'))
+    handPlayer.forEach((hand) => hand.classList.add('hide'))
+
+    gameEnd.classList.add('hide')
+    gameStart.classList.remove('hide')
+
+    if (gameMode === 'normal') {
+      playNormal.classList.add('hide')
+      playAdvanced.classList.remove('hide')
+      advancedHands.forEach((h) => h.classList.add('hide'))
+    } else {
+      playNormal.classList.remove('hide')
+      playAdvanced.classList.add('hide')
+      advancedHands.forEach((h) => h.classList.remove('hide'))
+    }
+    selectHand.classList.remove('hide')
+    justLoaded = true
+  })
 })

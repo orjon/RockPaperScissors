@@ -12,7 +12,7 @@
   </script>
   <meta charset='utf-8'>
   <link rel='shortcut icon' type='image/x-icon' href='./images/favicon.ico' />
-  <link rel='stylesheet' href='css/style.css'>
+  <link rel='stylesheet' href="styles/style.css">
   <script type='text/javascript' src='scripts/main.js'></script>
   <title>Rock Paper Scissor</title>
 </head>
@@ -22,31 +22,25 @@
   <main>
 
     <div class='gameStart'>
-
-      <div class='screenStart'>
-        <div class='gameSelect'>
-          <p class='gameNormal'>play the game</p>
-        </div>
-        <div class='gameSelect'>
-          <p class='gameAdvanced'>play the other game</p>
-        </div>
-      </div>
-
-      <nav class='screenSelectHand hide'>
-        <div class='selector advanced'><img class='spock' src='images/hand_select_spock.png'></div>
+      <div class='selectHand'>
         <div class='selector'><img class='rock' src='images/hand_select_rock.png'></div>
         <div class='selector'><img class='paper' src='images/hand_select_paper.png'></div>
         <div class='selector'><img class='scissors'src='images/hand_select_scissors.png'></div>
-        <div class='selector advanced'><img class='lizard' src='images/hand_select_lizard.png'></div>
-
-      </nav>
+        <div class='selector advanced hide'><img class='lizard' src='images/hand_select_lizard.png'></div>
+        <div class='selector advanced hide'><img class='spock' src='images/hand_select_spock.png'></div>
+      </div>
+      <div class='gameSelect'>
+        <p class='changeGame'>change game:</p>
+        <p class='gameMode gameNormal select hide'>rock paper scissors</p>
+        <p class='gameMode gameAdvanced select'>rock paper scissors lizard spock</p>
+      </div>
     </div>
 
     <div class='gameEnd hide'>
       <div class='result'>
-        <div onClick='window.location.reload(true)'><img class='win hide' src='images/result_win.png'></div>
-        <div onClick='window.location.reload(true)'><img class='draw hide' src='images/result_draw.png'></div>
-        <div onClick='window.location.reload(true)'><img class='lose hide' src='images/result_lose.png'></div>
+        <div><img class='win hide' src='images/result_win.png'></div>
+        <div><img class='draw hide' src='images/result_draw.png'></div>
+        <div><img class='lose hide' src='images/result_lose.png'></div>
       </div>
 
       <div class='halfCPU'>

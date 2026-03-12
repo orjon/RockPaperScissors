@@ -79,16 +79,14 @@ main nav .selector img {
   max-height: 85%;
   opacity: 0.5;
   transition-timing-function: ease-out;
-  -webkit-transition: max-width 0s;
-  /* For Safari 3.1 to 6.0 */
+  -webkit-transition: max-width 0s; /* For Safari 3.1 to 6.0 */
   transition: max-width 0s;
 }
 main nav .selector img.over {
   max-width: 90%;
   max-height: 90%;
   transition-timing-function: ease-out;
-  -webkit-transition: max-width 0s;
-  /* For Safari 3.1 to 6.0 */
+  -webkit-transition: max-width 0s; /* For Safari 3.1 to 6.0 */
   transition: max-width 0s;
   opacity: 1;
 }
